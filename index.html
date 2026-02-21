@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knothnwhimsy by hamra</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Quicksand', sans-serif; background-color: #fff9fb; color: #444; margin: 0; padding: 0; }
+        header { background: linear-gradient(135deg, #ff85a2 0%, #ff6f91 100%); padding: 40px 20px; color: white; text-align: center; }
+        .container { padding: 40px 20px; max-width: 1200px; margin: auto; }
+        .product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .product-card { background: white; padding: 15px; border-radius: 25px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); text-align: center; border: 1px solid #ffe4e9; }
+        .product-image { width: 100%; height: 300px; object-fit: cover; border-radius: 20px; }
+        .price { font-size: 1.4em; font-weight: 600; color: #ff6f91; margin-bottom: 20px; display: block; }
+        .buy-btn { background: #d81b60; color: white; border: none; padding: 12px 35px; border-radius: 50px; cursor: pointer; font-size: 1.1em; width: 80%; text-decoration: none; display: inline-block; }
+        
+        /* Form Styling */
+        #details-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); z-index: 1000; justify-content: center; align-items: center; }
+        .form-container { background: white; padding: 30px; border-radius: 30px; width: 90%; max-width: 500px; position: relative; }
+        .close-btn { position: absolute; top: 15px; right: 20px; font-size: 24px; cursor: pointer; color: #888; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Knothnwhimsy</h1>
+    <p>🧶 Exact Handmade Crochet Treasures 🧶</p>
+</header>
+
+<div class="container">
+    <div class="product-grid">
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1622321523314-9988451845f0?auto=format&fit=crop&q=80&w=600" alt="Cherry" class="product-image">
+            <h3>Handmade Cherry Keychain 🍒</h3>
+            <span class="price">₹199</span>
+            <button class="buy-btn" onclick="openOrderForm()">Buy Now</button>
+        </div>
+
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1615486511484-92e172cc4fe0?auto=format&fit=crop&q=80&w=600" alt="Jellyfish" class="product-image">
+            <h3>Jelly Fish Keychain 🪼</h3>
+            <span class="price">₹249</span>
+            <button class="buy-btn" onclick="openOrderForm()">Buy Now</button>
+        </div>
+
+        <div class="product-card">
+            <img src="https://i.pinimg.com/564x/44/8b/6e/448b6e6378e9063283187654a991c09b.jpg" alt="Rose" class="product-image">
+            <h3>Crochet Rose Keychain 🌹</h3>
+            <span class="price">₹149</span>
+            <button class="buy-btn" onclick="openOrderForm()">Buy Now</button>
+        </div>
+
+        <div class="product-card">
+            <img src="https://i.pinimg.com/564x/8a/7e/6b/8a7e6b7d7f768c8b6b196883a938883c.jpg" alt="Bouquet" class="product-image">
+            <h3>Full Flower Bouquet 💐</h3>
+            <span class="price">₹899</span>
+            <button class="buy-btn" onclick="openOrderForm()">Buy Now</button>
+        </div>
+
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&q=80&w=600" alt="Cardigan" class="product-image">
+            <h3>Handmade Cardigan 🧥</h3>
+            <span class="price">₹1,999</span>
+            <button class="buy-btn" onclick="openOrderForm()">Buy Now</button>
+        </div>
+
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?auto=format&fit=crop&q=80&w=600" alt="Beanie" class="product-image">
+            <h3>Woolen Beanie 🧢</h3>
+            <span class="price">₹499</span>
+            <button class="buy-btn" onclick="openOrderForm()">Buy Now</button>
+        </div>
+    </div>
+</div>
+
+<div id="details-overlay">
+    <div class="form-container">
+        <span class="close-btn" onclick="closeOrderForm()">&times;</span>
+        <h2 style="color: #d81b60; text-align: center;">Order Form</h2>
+        <p style="text-align: center; font-size: 0.9em; color: #666;">Please fill details. Data will be saved in our Excel Sheet.</p>
+        
+        <iframe src="https://docs.google.com/forms/d/e/YOUR_FORM_ID_HERE/viewform?embedded=true" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    </div>
+</div>
+
+<script>
+    function openOrderForm() {
+        document.getElementById('details-overlay').style.display = 'flex';
+    }
+    function closeOrderForm() {
+        document.getElementById('details-overlay').style.display = 'none';
+    }
+</script>
+
+</body>
+</html>
