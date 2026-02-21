@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knothnwhimsy by hamra</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: #fff0f5; /* Softer Pink BG */
+            color: #4a4a4a;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        header {
+            background-color: #ffaddf; /* Vibrant crochet pink */
+            background-image: linear-gradient(315deg, #ffaddf 0%, #ff6f91 74%);
+            padding: 30px 20px;
+            box-shadow: 0 4px 10px rgba(216, 27, 96, 0.2);
+            color: white;
+        }
+        h1 { margin: 0; font-size: 2.8em; font-weight: 600; letter-spacing: 1px; }
+        header p { font-size: 1.2em; margin-top: 10px; }
+        
+        .container { padding: 30px 20px; max-width: 1100px; margin: auto; }
+        
+        /* Product Grid Styling */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .product-card {
+            background: white;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border: 2px solid #ffeef2;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(216, 27, 96, 0.15);
+            border-color: #ff6f91;
+        }
+
+        /* Image Styling */
+        .product-image {
+            width: 100%;
+            height: 250px; /* Fixed height for uniformity */
+            object-fit: cover; /* Ensures image crops nicely to fit the box */
+            border-radius: 15px;
+            margin-bottom: 15px;
+            background-color: #ffdde7; /* Placeholder color while loading */
+        }
+
+        .product-card h3 { color: #d81b60; font-size: 1.5em; margin: 10px 0; }
+        .price { font-size: 1.4em; font-weight: 600; color: #ff6f91; margin: 10px 0 20px 0; }
+        
+        button {
+            background-color: #d81b60;
+            background-image: linear-gradient(315deg, #d81b60 0%, #ff6f91 74%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(216, 27, 96, 0.3);
+        }
+        button:hover { 
+            transform: scale(1.05); 
+            box-shadow: 0 8px 20px rgba(216, 27, 96, 0.5);
+        }
+
+        /* Form Styling */
+        #details-page {
+            display: none;
+            background: white;
+            padding: 40px;
+            border-radius: 25px;
+            max-width: 550px;
+            margin: 40px auto;
+            text-align: left;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            border: 2px solid #ffeef2;
+        }
+        #details-page h2 { text-align: center; color: #d81b60; margin-bottom: 25px;}
+        label { display: block; margin-top: 15px; font-weight: 600; color: #d81b60; }
+        input {
+            width: 100%;
+            padding: 15px;
+            margin-top: 8px;
+            border: 2px solid #ffeef2;
+            border-radius: 12px;
+            box-sizing: border-box;
+            font-size: 1em;
+            transition: border-color 0.3s;
+            font-family: 'Quicksand', sans-serif;
+        }
+        input:focus { outline: none; border-color: #ff6f91; }
+        .btn-group { margin-top: 30px; text-align: center; display: flex; gap: 15px; justify-content: center;}
+        .btn-cancel { background: #e0e0e0; color: #555; box-shadow: none; }
+        .btn-cancel:hover { background: #d0d0d0; transform: none; box-shadow: none;}
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Knothnwhimsy by hamra</h1>
+    <p>✨ Handmade Crochet Items with Love & Yarn ✨</p>
+</header>
+
+<div class="container" id="home-page">
+    <div class="product-grid">
+        <div class="product-card">
+            <img src="https://via.placeholder.com/300x300/ffcfdc/d81b60?text=Cherry+Keychain" alt="Cherry Keychain" class="product-image">
+            <h3>Cherry Keychain 🍒</h3>
+            <p class="price">₹199</p>
+            <button onclick="showDetails('Cherry Keychain', '199')">Buy Now</button>
+        </div>
+
+        <div class="product-card">
+            <img src="https://via.placeholder.com/300x300/ffcfdc/d81b60?text=Jellyfish+Keychain" alt="Jelly Fish Keychain" class="product-image">
+            <h3>Jelly Fish Keychain 🪼</h3>
+            <p class="price">₹249</p>
+            <button onclick="showDetails('Jelly Fish Keychain', '249')">Buy Now</button>
+        </div>
+
+        <div class="product-card">
+            <img src="https://via.placeholder.com/300x300/ffcfdc/d81b60?text=Rose+Keychain" alt="Rose Keychain" class="product-image">
+            <h3>Rose Keychain 🌹</h3>
+            <p class="price">₹149</p>
+            <button onclick="showDetails('Rose Keychain', '149')">Buy Now</button>
+        </div
+
+        <div class="product-card">
+            <img src="https://via.placeholder.com/300x300/ffcfdc/d81b60?text=Flower+Bouquet" alt="Flower Bouquet" class="product-image">
+            <h3>Flower Bouquet 💐</h3>
+            <p class="price">₹899</p>
+            <button onclick="showDetails('Flower Bouquet', '899')">Buy Now</button>
+        </div>
+
+        <div class="product-card">
+            <img src="https://via.placeholder.com/300x300/ffcfdc/d81b60?text=Crochet+Cardigan" alt="Cardigan" class="product-image">
+            <h3>Cardigan 🧥</h3>
+            <p class="price">₹1,999</p>
+            <button onclick="showDetails('Cardigan', '1999')">Buy Now</button>
+        </div>
+
+        <div class="product-card">
+             <img src="https://via.placeholder.com/300x300/ffcfdc/d81b60?text=Winter+Beanie" alt="Beanie" class="product-image">
+            <h3>Beanie 🧢</h3>
+            <p class="price">₹499</p>
+            <button onclick="showDetails('Beanie', '499')">Buy Now</button>
+        </div>
+    </div>
+</div>
+
+<div id="details-page">
+    <h2>📝 Order Details</h2>
+    <p id="selected-item" style="font-weight: bold; text-align: center; font-size: 1.2em; color: #ff6f91;"></p>
+    
+    <label>Full Name *</label>
+    <input type="text" id="name" placeholder="Enter your name" required>
+    
+    <label>Full Address (House No, Street, Area) *</label>
+    <input type="text" id="address" placeholder="Enter complete address" required>
+    
+    <div style="display: flex; gap: 15px;">
+        <div style="flex: 1;">
+            <label>Pincode *</label>
+            <input type="number" id="pincode" placeholder="6-digit pin" required>
+        </div>
+        <div style="flex: 1;">
+             <label>District *</label>
+             <input type="text" id="district" placeholder="District name" required>
+        </div>
+    </div>
+    
+    <label>Contact Number (WhatsApp preferred) *</label>
+    <input type="tel" id="contact" placeholder="10-digit number" required>
+    
+    <label>Alternative Contact (Optional)</label>
+    <input type="tel" id="altContact" placeholder="Optional number">
+    
+    <label>Email ID (Optional)</label>
+    <input type="email" id="email" placeholder="email@example.com">
+
+    <div class="btn-group">
+        <button onclick="confirmOrder()">Confirm Order ✅</button>
+        <button class="btn-cancel" onclick="location.reload()">Cancel ❌</button>
+    </div>
+</div>
+
+<script>
+    let currentItem = "";
+    let currentPrice = "";
+
+    // Function to show form page
+    function showDetails(item, price) {
+        currentItem = item;
+        currentPrice = price;
+        // Hide home page smoothly
+        document.getElementById('home-page').style.opacity = '0';
+        setTimeout(() => {
+             document.getElementById('home-page').style.display = 'none';
+             // Show details page
+             const detailsPage = document.getElementById('details-page');
+             detailsPage.style.display = 'block';
+             detailsPage.style.opacity = '0';
+             setTimeout(() => { detailsPage.style.opacity = '1'; }, 50);
+             
+             document.getElementById('selected-item').innerText = "Selected Item: " + item + " (₹" + price + ")";
+             window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 300);
+    }
+
+    // Function to send WhatsApp message
+    function confirmOrder() {
+        const name = document.getElementById('name').value.trim();
+        const address = document.getElementById('address').value.trim();
+        const contact = document.getElementById('contact').value.trim();
+        const pincode = document.getElementById('pincode').value.trim();
+        const district = document.getElementById('district').value.trim();
+        const altContact = document.getElementById('altContact').value.trim();
+        const email = document.getElementById('email').value.trim();
+
+        // Basic Validation for mandatory fields
+        if(name === "" || address === "" || contact === "" || pincode === "" || district === "") {
+            alert("Please fill all the required fields marked with *");
+            return;
+        }
+        
+        if(contact.length < 10) {
+             alert("Please enter a valid 10-digit contact number.");
+             return;
+        }
+
+        // Create formatted WhatsApp message
+        const message = `Hello Knothnwhimsy! I want to place an order.%0A%0A` +
+                        `🧶 *ORDER DETAILS* 🧶%0A` +
+                        `*Item:* ${currentItem}%0A` +
+                        `*Price:* ₹${currentPrice}%0A` +
+                        `--------------------------------%0A` +
+                        `📝 *SHIPPING DETAILS* 📝%0A` +
+                        `*Name:* ${name}%0A` +
+                        `*Address:* ${address}%0A` +
+                        `*District:* ${district}%0A` +
+                        `*Pincode:* ${pincode}%0A` +
+                        `*Contact:* ${contact}%0A` +
+                        (altContact ? `*Alt Contact:* ${altContact}%0A` : "") +
+                        (email ? `*Email:* ${email}%0A` : "") +
+                        `--------------------------------%0A` +
+                        `Please confirm my order. Thank you! ✨`;
+
+        // Open WhatsApp app with pre-filled message
+        const whatsappURL = `https://wa.me/919469126968?text=${message}`;
+        window.open(whatsappURL, '_blank');
+    }
+</script>
+
+</body>
+</html>
